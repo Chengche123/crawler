@@ -6,14 +6,14 @@ import (
 )
 
 func TestInitTable(t *testing.T) {
-	_, err := NewComicCategoryRepository()
+	_, err := NewComicCategoryRepository("root:root@tcp(127.0.0.1)/comic")
 	if err != nil {
 		t.Error(err)
 	}
 }
 
 func TestUpsertComicGategory(t *testing.T) {
-	db, err := NewComicCategoryRepository()
+	db, err := NewComicCategoryRepository("root:root@tcp(127.0.0.1)/comic")
 	if err != nil {
 		t.Error(err)
 	}

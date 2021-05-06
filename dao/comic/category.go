@@ -9,27 +9,22 @@ import (
 	"gorm.io/gorm/clause"
 )
 
-const dsn = "root:root@tcp(127.0.0.1)/comic"
-
 type ComicCategoryRepository struct {
 	db *gorm.DB
+	*mgorm.Closer
 }
 
-func NewComicCategoryRepository() (*ComicCategoryRepository, error) {
-	db, err := mgorm.NewMysqlGormByDSN(dsn)
+func NewComicCategoryRepository(dsn string) (*ComicCategoryRepository, error) {
+	db, err := mgorm.NewMysqlGormWithTable(dsn, &model.ComicCategory{})
 	if err != nil {
-		return nil, fmt.Errorf("failed to init gorm: %v", err)
-	}
-
-	if !db.Migrator().HasTable(&model.ComicCategory{}) {
-		err := db.Migrator().CreateTable(&model.ComicCategory{})
-		if err != nil {
-			return nil, fmt.Errorf("cannot create new table: %v", err)
-		}
+		return nil, fmt.Errorf("failed to create gorm: %v", err)
 	}
 
 	return &ComicCategoryRepository{
 		db: db,
+		Closer: &mgorm.Closer{
+			DB: db,
+		},
 	}, nil
 }
 
