@@ -1,0 +1,266 @@
+[
+    {
+        "title": "题材",
+        "items": [
+            {
+                "tag_id": 0,
+                "tag_name": "全部"
+            },
+            {
+                "tag_id": 4,
+                "tag_name": "冒险"
+            },
+            {
+                "tag_id": 5,
+                "tag_name": "欢乐向"
+            },
+            {
+                "tag_id": 6,
+                "tag_name": "格斗"
+            },
+            {
+                "tag_id": 7,
+                "tag_name": "科幻"
+            },
+            {
+                "tag_id": 8,
+                "tag_name": "爱情"
+            },
+            {
+                "tag_id": 9,
+                "tag_name": "侦探"
+            },
+            {
+                "tag_id": 10,
+                "tag_name": "竞技"
+            },
+            {
+                "tag_id": 11,
+                "tag_name": "魔法"
+            },
+            {
+                "tag_id": 12,
+                "tag_name": "神鬼"
+            },
+            {
+                "tag_id": 13,
+                "tag_name": "校园"
+            },
+            {
+                "tag_id": 14,
+                "tag_name": "惊悚"
+            },
+            {
+                "tag_id": 16,
+                "tag_name": "其他"
+            },
+            {
+                "tag_id": 17,
+                "tag_name": "四格"
+            },
+            {
+                "tag_id": 3242,
+                "tag_name": "生活"
+            },
+            {
+                "tag_id": 3243,
+                "tag_name": "ゆり"
+            },
+            {
+                "tag_id": 3244,
+                "tag_name": "秀吉"
+            },
+            {
+                "tag_id": 3245,
+                "tag_name": "悬疑"
+            },
+            {
+                "tag_id": 3246,
+                "tag_name": "纯爱"
+            },
+            {
+                "tag_id": 3248,
+                "tag_name": "热血"
+            },
+            {
+                "tag_id": 3249,
+                "tag_name": "泛爱"
+            },
+            {
+                "tag_id": 3250,
+                "tag_name": "历史"
+            },
+            {
+                "tag_id": 3251,
+                "tag_name": "战争"
+            },
+            {
+                "tag_id": 3252,
+                "tag_name": "萌系"
+            },
+            {
+                "tag_id": 3253,
+                "tag_name": "宅系"
+            },
+            {
+                "tag_id": 3254,
+                "tag_name": "治愈"
+            },
+            {
+                "tag_id": 3255,
+                "tag_name": "励志"
+            },
+            {
+                "tag_id": 3324,
+                "tag_name": "武侠"
+            },
+            {
+                "tag_id": 3325,
+                "tag_name": "机战"
+            },
+            {
+                "tag_id": 3326,
+                "tag_name": "音乐舞蹈"
+            },
+            {
+                "tag_id": 3327,
+                "tag_name": "美食"
+            },
+            {
+                "tag_id": 3328,
+                "tag_name": "职场"
+            },
+            {
+                "tag_id": 3365,
+                "tag_name": "西方魔幻"
+            },
+            {
+                "tag_id": 4459,
+                "tag_name": "高清单行"
+            },
+            {
+                "tag_id": 4518,
+                "tag_name": "TS"
+            },
+            {
+                "tag_id": 5077,
+                "tag_name": "东方"
+            },
+            {
+                "tag_id": 5806,
+                "tag_name": "魔幻"
+            },
+            {
+                "tag_id": 5848,
+                "tag_name": "奇幻"
+            },
+            {
+                "tag_id": 6219,
+                "tag_name": "节操"
+            },
+            {
+                "tag_id": 6316,
+                "tag_name": "轻小说"
+            },
+            {
+                "tag_id": 6437,
+                "tag_name": "颜艺"
+            },
+            {
+                "tag_id": 7568,
+                "tag_name": "搞笑"
+            },
+            {
+                "tag_id": 7900,
+                "tag_name": "仙侠"
+            },
+            {
+                "tag_id": 13627,
+                "tag_name": "舰娘"
+            },
+            {
+                "tag_id": 17192,
+                "tag_name": "动画"
+            },
+            {
+                "tag_id": 18522,
+                "tag_name": "AA"
+            }
+        ]
+    },
+    {
+        "title": "读者群",
+        "items": [
+            {
+                "tag_id": 0,
+                "tag_name": "全部"
+            },
+            {
+                "tag_id": 3262,
+                "tag_name": "少年漫画"
+            },
+            {
+                "tag_id": 3263,
+                "tag_name": "少女漫画"
+            },
+            {
+                "tag_id": 3264,
+                "tag_name": "青年漫画"
+            },
+            {
+                "tag_id": 13626,
+                "tag_name": "女青漫画"
+            }
+        ]
+    },
+    {
+        "title": "进度",
+        "items": [
+            {
+                "tag_id": 0,
+                "tag_name": "全部"
+            },
+            {
+                "tag_id": 2309,
+                "tag_name": "连载中"
+            },
+            {
+                "tag_id": 2310,
+                "tag_name": "已完结"
+            }
+        ]
+    },
+    {
+        "title": "地域",
+        "items": [
+            {
+                "tag_id": 0,
+                "tag_name": "全部"
+            },
+            {
+                "tag_id": 2304,
+                "tag_name": "日本"
+            },
+            {
+                "tag_id": 2305,
+                "tag_name": "韩国"
+            },
+            {
+                "tag_id": 2306,
+                "tag_name": "欧美"
+            },
+            {
+                "tag_id": 2307,
+                "tag_name": "港台"
+            },
+            {
+                "tag_id": 2308,
+                "tag_name": "内地"
+            },
+            {
+                "tag_id": 8435,
+                "tag_name": "其他"
+            }
+        ]
+    }
+]

@@ -2,6 +2,7 @@ package api
 
 import (
 	rapi "crawler/server/api"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -30,4 +31,8 @@ func ComicCategoryDetail(ids []int, sort, page int) string {
 	}
 
 	return rapi.Host + "/classify/" + idstr + "/" + strconv.Itoa(sort) + "/" + strconv.Itoa(page) + ".json"
+}
+
+func ComicDetail(id int) string {
+	return fmt.Sprintf("http://v4api.dmzj1.com/comic/detail/%d?", id) + comicDetailParam
 }

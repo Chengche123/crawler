@@ -16,10 +16,16 @@ type CategoryRepository interface {
 
 type CategoryDetailRepository interface {
 	UpsertComicGategoryDetail(entries []model.CategoryDetail) (int, error)
+	FindByHotDESC(offset, limit int) ([]model.CategoryDetail, error)
+}
+
+type ComicDetailRepository interface {
+	UpsertComicDetail(entries []model.ComicDetail) (int, error)
 }
 
 type ComicServer struct {
 	CategoryRepository       CategoryRepository
 	CategoryFilterRepository CategoryFilterRepository
 	CategoryDetailRepository CategoryDetailRepository
+	ComicDetailRepository    ComicDetailRepository
 }

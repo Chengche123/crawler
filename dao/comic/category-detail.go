@@ -38,3 +38,19 @@ func (r *CategoryDetailRepository) UpsertComicGategoryDetail(entries []model.Cat
 
 	return int(tx.RowsAffected), nil
 }
+
+func (r *CategoryDetailRepository) FindByIDASC(offset, limit int) ([]model.CategoryDetail, error) {
+	var res []model.CategoryDetail
+
+	r.db.Offset(offset).Limit(limit).Order("id ASC").Find(&res)
+
+	return res, nil
+}
+
+func (r *CategoryDetailRepository) FindByHotDESC(offset, limit int) ([]model.CategoryDetail, error) {
+	var res []model.CategoryDetail
+
+	r.db.Offset(offset).Limit(limit).Order("num DESC").Find(&res)
+
+	return res, nil
+}

@@ -1,0 +1,49 @@
+{
+    "author_comics": [
+        {
+            "author_name": "雪森宁宁",
+            "author_id": 15008,
+            "data": [
+                {
+                    "id": 44410,
+                    "name": "恋上人类的鬼似花般绽放",
+                    "cover": "https:\/\/images.dmzj1.com\/webpic\/5\/180601xuesen.jpg",
+                    "status": "已完结"
+                },
+                {
+                    "id": 48080,
+                    "name": "久保同学不原谅我",
+                    "cover": "https:\/\/images.dmzj1.com\/webpic\/0\/jiubao20190411.jpg",
+                    "status": "已完结"
+                },
+                {
+                    "id": 50758,
+                    "name": "久保同学不放过我",
+                    "cover": "https:\/\/images.dmzj1.com\/webpic\/19\/jiubaotongxuebufangguowojsi.jpg",
+                    "status": "连载中"
+                }
+            ]
+        }
+    ],
+    "theme_comics": [
+        {
+            "id": 15,
+            "name": "kanon & AIR",
+            "cover": "https:\/\/images.dmzj1.com\/webpic\/15\/aandk.jpg",
+            "status": "已完结"
+        },
+        {
+            "id": 17,
+            "name": "爱永不止息",
+            "cover": "https:\/\/images.dmzj1.com\/webpic\/17\/ai.jpg",
+            "status": "已完结"
+        },
+        {
+            "id": 27,
+            "name": "爱似百汇",
+            "cover": "https:\/\/images.dmzj1.com\/webpic\/7\/asbh.jpg",
+            "status": "已完结"
+        }
+    ],
+    "novels": []
+}
