@@ -66,3 +66,4 @@ $RECYCLE.BIN/
 
 .*.go
 private.go
+*.json
