@@ -35,7 +35,7 @@ func TestCreatePath(t *testing.T) {
 }
 
 func TestDownloadStatic(t *testing.T) {
-	err := downloadStatic([]string{
+	err := DownloadStatic([]string{
 		"http://images.dmzj1.com/webpic/4/kdjdnhai20210305a.jpg",
 		"http://images.dmzj1.com/webpic/18/bdonjl20210424.jpg",
 		"http://images.dmzj1.com/webpic/19/jiubaotongxuebufangguowojsi.jpg",

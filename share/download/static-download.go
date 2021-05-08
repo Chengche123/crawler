@@ -18,7 +18,7 @@ type staticRes struct {
 	file string // jiubaotongxuebufangguowojsi.jpg
 }
 
-func downloadStatic(apis []string) error {
+func DownloadStatic(apis []string) error {
 	res := make([]*staticRes, 0, len(apis))
 
 	for _, api := range apis {
