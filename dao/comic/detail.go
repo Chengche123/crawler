@@ -39,3 +39,19 @@ func (r *ComicDetailRepository) UpsertComicDetail(entries []model.ComicDetail) (
 
 	return int(tx.RowsAffected), nil
 }
+
+func (r *ComicDetailRepository) FindByHotDESC(offset, limit int) ([]model.ComicDetail, error) {
+	var res []model.ComicDetail
+
+	r.db.Offset(offset).Limit(limit).Order("hotnum DESC").Find(&res)
+
+	return res, nil
+}
+
+func (r *ComicDetailRepository) Count() (int, error) {
+	var count int64
+	if err := r.db.Model(&model.ComicDetail{}).Count(&count).Error; err != nil {
+		return 0, fmt.Errorf("failed to count: %v", err)
+	}
+	return int(count), nil
+}
