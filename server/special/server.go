@@ -6,6 +6,7 @@ import (
 
 type ComicSpecialRepository interface {
 	UpsertComicSpecial(entries []model.ComicSpecial) (int, error)
+	FindAll() ([]model.ComicSpecial, error)
 }
 
 type SpecialServer struct {

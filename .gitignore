@@ -69,3 +69,4 @@ private.go
 *.json
 static
 .service
+*.zip

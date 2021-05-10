@@ -38,3 +38,11 @@ func (r *ComicSpecialRepository) UpsertComicSpecial(entries []model.ComicSpecial
 
 	return int(tx.RowsAffected), nil
 }
+
+func (r *ComicSpecialRepository) FindAll() ([]model.ComicSpecial, error) {
+	var res []model.ComicSpecial
+	if err := r.db.Find(&res).Error; err != nil {
+		return nil, err
+	}
+	return res, nil
+}
