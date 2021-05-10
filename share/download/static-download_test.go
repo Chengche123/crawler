@@ -14,7 +14,7 @@ func TestParseStaticUrl(t *testing.T) {
 		t.Errorf("file want %q,got %q", wantFile, r.file)
 	}
 
-	wantPath := "static/webpic/19/"
+	wantPath := "static/images.dmzj1.com/webpic/19/"
 	if r.path != wantPath {
 		t.Errorf("path want %q,got %q", wantPath, r.path)
 	}

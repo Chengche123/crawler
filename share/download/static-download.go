@@ -87,7 +87,7 @@ func parseStaticUrl(URL string) (*staticRes, error) {
 	file := filepath.Base(p.Path)
 	return &staticRes{
 		file: file,
-		path: "static" + p.Path[:len(p.Path)-len(file)],
+		path: "static/" + p.Host + p.Path[:len(p.Path)-len(file)],
 		url:  URL,
 	}, nil
 }
