@@ -9,7 +9,7 @@ YV2VWLUiOzKm4aonL/RV7JMRDvtHzOM+HCF7MH3kvbpfLmyop1KZ2De6XcsR4EuR7oY0w2SF7+9LAMDQ
 `
 
 func TestDecryptComicDetail(t *testing.T) {
-	_, err := DecryptComicDetail(cipher)
+	_, err := Decrypt(cipher)
 	if err != nil {
 		t.Log(err)
 		return

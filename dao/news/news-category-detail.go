@@ -9,18 +9,18 @@ import (
 	"gorm.io/gorm/clause"
 )
 
-type NewsCategoryRepository struct {
+type NewsCategoryDetailRepository struct {
 	db *gorm.DB
 	*mgorm.Closer
 }
 
-func NewNewsCategoryRepository(dsn string) (*NewsCategoryRepository, error) {
-	db, err := mgorm.NewMysqlGormWithTable(dsn, &model.NewsCategory{})
+func NewNewsCategoryDetailRepository(dsn string) (*NewsCategoryDetailRepository, error) {
+	db, err := mgorm.NewMysqlGormWithTable(dsn, &model.NewsCategoryDetail{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to create gorm: %v", err)
 	}
 
-	return &NewsCategoryRepository{
+	return &NewsCategoryDetailRepository{
 		db: db,
 		Closer: &mgorm.Closer{
 			DB: db,
@@ -28,7 +28,7 @@ func NewNewsCategoryRepository(dsn string) (*NewsCategoryRepository, error) {
 	}, nil
 }
 
-func (r *NewsCategoryRepository) UpsertNewsCategory(entries []model.NewsCategory) (int, error) {
+func (r *NewsCategoryDetailRepository) UpsertNewsCategoryDetail(entries []model.NewsCategoryDetail) (int, error) {
 	tx := r.db.Clauses(clause.OnConflict{
 		DoNothing: true,
 	}).Create(entries)

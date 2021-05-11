@@ -8,7 +8,7 @@ import (
 	"fmt"
 )
 
-func DecryptComicDetail(cipher string) ([]byte, error) {
+func Decrypt(cipher string) ([]byte, error) {
 	pck, err := base64.StdEncoding.DecodeString(PrivateKey)
 	if err != nil {
 		return nil, fmt.Errorf("invalid Private key: %v", err)

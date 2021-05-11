@@ -27,7 +27,7 @@ func (s *NewsServer) StartCrawlNewsCategory() error {
 		return fmt.Errorf("failed to Unmarshal: %v", err)
 	}
 
-	_, err = s.NewsCategoryRepository.UpsertComicComment(mos)
+	_, err = s.NewsCategoryRepository.UpsertNewsCategory(mos)
 	if err != nil {
 		return fmt.Errorf("failed to UpsertComicComment: %v", err)
 	}

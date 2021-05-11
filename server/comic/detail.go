@@ -110,5 +110,5 @@ func (s *ComicServer) crawlComicDetail(id int) ([]byte, error) {
 		return nil, fmt.Errorf("failed to read body: %v", err)
 	}
 
-	return crypto.DecryptComicDetail(string(bs))
+	return crypto.Decrypt(string(bs))
 }
