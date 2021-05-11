@@ -38,3 +38,11 @@ func (r *NewsCategoryDetailRepository) UpsertNewsCategoryDetail(entries []model.
 
 	return int(tx.RowsAffected), nil
 }
+
+func (r *NewsCategoryDetailRepository) FindAll() ([]model.NewsCategoryDetail, error) {
+	var res []model.NewsCategoryDetail
+	if err := r.db.Find(&res).Error; err != nil {
+		return nil, err
+	}
+	return res, nil
+}

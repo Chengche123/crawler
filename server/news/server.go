@@ -8,6 +8,7 @@ type NewsCategoryRepository interface {
 
 type NewsCategoryDetailRepository interface {
 	UpsertNewsCategoryDetail(entries []model.NewsCategoryDetail) (int, error)
+	FindAll() ([]model.NewsCategoryDetail, error)
 }
 
 type NewsServer struct {
