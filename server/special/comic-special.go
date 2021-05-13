@@ -2,6 +2,7 @@ package server
 
 import (
 	model "crawler/model/special"
+	jmodel "crawler/model/special/json"
 	api "crawler/server/api/special"
 	"crawler/share/log"
 	"encoding/json"
@@ -54,11 +55,26 @@ func (s SpecialServer) startCrawlComicSpecialByURL(URL string) error {
 		return fmt.Errorf("stream occur error: %v", err)
 	}
 
-	var specials []model.ComicSpecial
+	var jmo jmodel.ComicSpecial
 
-	err = json.Unmarshal(bs, &specials)
+	err = json.Unmarshal(bs, &jmo)
 	if err != nil {
 		return fmt.Errorf("Unmarshal error: %v", err)
+	}
+
+	specials := make([]model.ComicSpecial, 0, len(jmo.Data))
+
+	for _, special := range jmo.Data {
+		specials = append(specials, model.ComicSpecial{
+			ID:         special.ID,
+			Title:      special.Title,
+			ShortTitle: special.ShortTitle,
+			CreateTime: special.CreateTime,
+			SmallCover: special.SmallCover,
+			PageType:   special.PageType,
+			Sort:       special.Sort,
+			PageURL:    special.PageURL,
+		})
 	}
 
 	_, err = s.ComicSpecialRepository.UpsertComicSpecial(specials)
