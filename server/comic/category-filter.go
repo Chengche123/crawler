@@ -40,8 +40,9 @@ func (s *ComicServer) StartCrawlCategoryFilter() error {
 		entry := make([]model.ComicCategoryFilter, 0, len(m.Items))
 		for _, v := range m.Items {
 			entry = append(entry, model.ComicCategoryFilter{
-				TagID: v.TagID,
-				Title: m.Title,
+				TagID:   v.TagID,
+				Title:   m.Title,
+				TagName: v.TagName,
 			})
 		}
 		entries = append(entries, entry...)
