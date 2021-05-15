@@ -9,18 +9,18 @@ import (
 	"gorm.io/gorm/clause"
 )
 
-type NovelCategoryRepository struct {
+type NovelCategoryDetailRepository struct {
 	db *gorm.DB
 	*mgorm.Closer
 }
 
-func NewNovelCategoryRepository(dsn string) (*NovelCategoryRepository, error) {
-	db, err := mgorm.NewMysqlGormWithTable(dsn, &model.NovelCategory{})
+func NewNovelCategoryDetailRepository(dsn string) (*NovelCategoryDetailRepository, error) {
+	db, err := mgorm.NewMysqlGormWithTable(dsn, &model.NovelCategoryDetail{})
 	if err != nil {
 		return nil, fmt.Errorf("failed to create gorm: %v", err)
 	}
 
-	return &NovelCategoryRepository{
+	return &NovelCategoryDetailRepository{
 		db: db,
 		Closer: &mgorm.Closer{
 			DB: db,
@@ -28,7 +28,7 @@ func NewNovelCategoryRepository(dsn string) (*NovelCategoryRepository, error) {
 	}, nil
 }
 
-func (r *NovelCategoryRepository) UpsertNovelCategory(entries []model.NovelCategory) (int, error) {
+func (r *NovelCategoryDetailRepository) UpsertNovelCategoryDetail(entries []model.NovelCategoryDetail) (int, error) {
 	tx := r.db.Clauses(clause.OnConflict{
 		DoNothing: true,
 	}).Create(entries)
@@ -37,13 +37,4 @@ func (r *NovelCategoryRepository) UpsertNovelCategory(entries []model.NovelCateg
 	}
 
 	return int(tx.RowsAffected), nil
-}
-
-func (r *NovelCategoryRepository) FindAll() ([]model.NovelCategory, error) {
-	var res []model.NovelCategory
-	if err := r.db.Find(&res).Error; err != nil {
-		return nil, err
-	}
-
-	return res, nil
 }

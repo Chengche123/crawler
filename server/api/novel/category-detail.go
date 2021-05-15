@@ -18,7 +18,7 @@ func c(i int) string {
 	return strconv.Itoa(i)
 }
 
-// status为进度id,可以在NovelCategory表里找
+// status为进度id,可以在category-filter.json里找
 func NovelCategoryDetail(id, status, sort, page int) string {
 	params := []string{c(id), c(status), c(sort), c(page)}
 
