@@ -47,3 +47,30 @@ func (r *ComicCategoryRepository) UpsertComicGategory(entries []model.ComicCateg
 
 	return int(tx.RowsAffected), nil
 }
+
+func (r *ComicCategoryRepository) FindAll() ([]model.ComicCategory, error) {
+	var res []model.ComicCategory
+	if err := r.db.Find(&res).Error; err != nil && err != gorm.ErrEmptySlice {
+		return nil, err
+	}
+
+	return res, nil
+}
+
+func (r *ComicCategoryRepository) FindStaticUrls() (<-chan []string, error) {
+	mos, err := r.FindAll()
+	if err != nil {
+		return nil, fmt.Errorf("failed to find all models: %v", err)
+	}
+
+	urls := make([]string, len(mos))
+	for i := 0; i < len(mos); i++ {
+		urls[i] = mos[i].Cover
+	}
+
+	res := make(chan []string, 1)
+	res <- urls
+	close(res)
+
+	return res, nil
+}
