@@ -37,9 +37,6 @@ func (s *ComicServer) StartCrawlComicDetail(offset, limit int) error {
 			for id := range inchan {
 				buf, err := s.crawlComicDetail(id)
 				if err != nil {
-					// log.Logger.Info("failed to crawlComicDetail",
-					// 	zap.String("id", strconv.Itoa(id)),
-					// 	zap.String("error", err.Error()))
 					continue
 				}
 				pb, err := pmodel.UnmashalComicDetailResponse(buf)
@@ -58,10 +55,6 @@ func (s *ComicServer) StartCrawlComicDetail(offset, limit int) error {
 
 				outchan <- mo
 
-				// _, err = s.ComicDetailRepository.UpsertComicDetail([]model.ComicDetail{*mo})
-				// if err != nil {
-				// 	log.Logger.Info("failed to UpsertComicDetail", zap.String("id", strconv.Itoa(id)))
-				// }
 			}
 
 		}()
