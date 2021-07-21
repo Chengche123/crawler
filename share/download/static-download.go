@@ -55,7 +55,13 @@ func DownloadStatic(apis []string) error {
 			}
 			defer file.Close()
 
-			r, err := http.Get(v.url)
+			req, err := http.NewRequest("GET", v.url, nil)
+			if err != nil {
+				log.Logger.Info("cannot create http req", zap.Error(err))
+				return
+			}
+			req.Header.Add("Referer", "http://www.dmzj.com/")
+			r, err := http.DefaultClient.Do(req)
 			if err != nil {
 				log.Logger.Info("failed to GET",
 					zap.String("url", v.url),
