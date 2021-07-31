@@ -2,7 +2,7 @@ package server
 
 import (
 	pmodel "crawler/model/comic/proto"
-	"encoding/json"
+	"crawler/share/log"
 	"testing"
 
 	"google.golang.org/protobuf/proto"
@@ -10,7 +10,8 @@ import (
 
 func TestCrawlComicDetail(t *testing.T) {
 	s := ComicServer{}
-	bs, err := s.crawlComicDetail(50758)
+	// 50758
+	bs, err := s.crawlComicDetail(33322)
 	if err != nil {
 		t.Log(err)
 		return
@@ -23,11 +24,6 @@ func TestCrawlComicDetail(t *testing.T) {
 		return
 	}
 
-	jstr, err := json.Marshal(&res)
-	if err != nil {
-		t.Log(err)
-		return
-	}
+	log.LogJson(&res)
 
-	t.Log(string(jstr))
 }

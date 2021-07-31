@@ -15,6 +15,7 @@ type ComicDetailRepository interface {
 type ComicCommentRepository interface {
 	UpsertComicComment(entries []commentModel.ComicComment) (int, error)
 	ComicCommentCount(comicid int) (int, error)
+	FindAllComicId() ([]int, error)
 }
 
 type CommentServer struct {

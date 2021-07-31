@@ -23,9 +23,19 @@ type ComicDetailRepository interface {
 	UpsertComicDetail(entries []model.ComicDetail) (int, error)
 }
 
+type ComicChapterRepository interface {
+	UpsertComicComment(entries []model.ComicChapter) (int, error)
+}
+
+type ComicCommentRepository interface {
+	FindAllComicId() ([]int, error)
+}
+
 type ComicServer struct {
 	CategoryRepository       CategoryRepository
 	CategoryFilterRepository CategoryFilterRepository
 	CategoryDetailRepository CategoryDetailRepository
 	ComicDetailRepository    ComicDetailRepository
+	ComicChapterRepository   ComicChapterRepository
+	ComicCommentRepository   ComicCommentRepository
 }

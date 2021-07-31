@@ -32,7 +32,7 @@ func (r *ComicCommentRepository) UpsertComicComment(entries []model.ComicComment
 	tx := r.db.Clauses(clause.OnConflict{
 		DoNothing: true,
 	}).Create(entries)
-	if tx.Error != nil && tx.Error != gorm.ErrEmptySlice {
+	if tx.Error != nil {
 		return int(tx.RowsAffected), fmt.Errorf("failed to insert entries: %v", tx.Error)
 	}
 
@@ -46,4 +46,14 @@ func (r *ComicCommentRepository) ComicCommentCount(comicid int) (int, error) {
 	}
 
 	return int(count), nil
+}
+
+func (r *ComicCommentRepository) FindAllComicId() ([]int, error) {
+	var res []int
+
+	if err := r.db.Model(&model.ComicComment{}).Group("obj_id").Select("obj_id").Find(&res).Error; err != nil {
+		return nil, err
+	}
+
+	return res, nil
 }
