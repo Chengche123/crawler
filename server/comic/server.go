@@ -20,6 +20,7 @@ type CategoryDetailRepository interface {
 }
 
 type ComicDetailRepository interface {
+	FindByHotDESC(offset, limit int) ([]model.ComicDetail, error)
 	UpsertComicDetail(entries []model.ComicDetail) (int, error)
 }
 

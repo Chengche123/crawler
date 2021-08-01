@@ -18,6 +18,7 @@ type staticRes struct {
 	file string // jiubaotongxuebufangguowojsi.jpg
 }
 
+// 非并发下载
 func DownloadStatic(apis []string) error {
 	res := make([]*staticRes, 0, len(apis))
 

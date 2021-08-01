@@ -18,14 +18,14 @@ import (
 )
 
 func (s *ComicServer) StartCrawlComicChapter() error {
-	cdetails, err := s.ComicCommentRepository.FindAllComicId()
+	cdetails, err := s.ComicDetailRepository.FindByHotDESC(0, 100)
 	if err != nil {
 		return fmt.Errorf("failed to get comic id from comment repository: %v", err)
 	}
 
 	inchan := make(chan int, len(cdetails))
 	for i := 0; i < len(cdetails); i++ {
-		inchan <- cdetails[i]
+		inchan <- cdetails[i].ID
 	}
 	close(inchan)
 	outchan := make(chan *pmodel.ComicDetailResponse, 16)

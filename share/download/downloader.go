@@ -19,7 +19,7 @@ func (d *Downloader) StartDownload() error {
 		return fmt.Errorf("failed to find models in dao: %v", err)
 	}
 
-	const concur = 8
+	const concur = 64
 	var wg sync.WaitGroup
 
 	for i := 0; i < concur; i++ {

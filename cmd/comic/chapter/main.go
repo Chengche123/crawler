@@ -1,8 +1,6 @@
 package main
 
 import (
-	commentDao "crawler/dao/comment"
-
 	dao "crawler/dao/comic"
 	server "crawler/server/comic"
 	"crawler/share/config"
@@ -12,7 +10,7 @@ import (
 )
 
 func main() {
-	rrepo, err := commentDao.NewComicCommentRepository(config.MysqlDSN)
+	rrepo, err := dao.NewComicDetailRepository(config.MysqlDSN)
 	if err != nil {
 		log.Logger.Error("", zap.Error(err))
 		return
@@ -28,7 +26,7 @@ func main() {
 
 	s := server.ComicServer{
 		ComicChapterRepository: wrepo,
-		ComicCommentRepository: rrepo,
+		ComicDetailRepository:  rrepo,
 	}
 
 	err = s.StartCrawlComicChapter()
